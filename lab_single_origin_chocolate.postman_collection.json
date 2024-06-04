@@ -1,9 +1,9 @@
 {
 	"info": {
-		"_postman_id": "988d57a8-8411-4f78-a873-3f782ee6a654",
+		"_postman_id": "4d0dc483-474c-4117-b854-743f509038c8",
 		"name": "lab_single_origin_chocolate",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "33963399"
+		"_exporter_id": "34601382"
 	},
 	"item": [
 		{
@@ -45,6 +45,26 @@
 						}
 					},
 					"response": []
+				},
+				{
+					"name": "SHOW - getChocolateswithCocoaPercentageLessThan",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/chocolate/findby/60",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"chocolate",
+								"findby",
+								"60"
+							]
+						}
+					},
+					"response": []
 				}
 			]
 		},
@@ -73,7 +93,10 @@
 					"name": "New Request",
 					"request": {
 						"method": "GET",
-						"header": []
+						"header": [],
+						"url": {
+							"raw": ""
+						}
 					},
 					"response": []
 				}
