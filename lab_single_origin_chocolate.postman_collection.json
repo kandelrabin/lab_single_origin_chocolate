@@ -13,7 +13,36 @@
 					"name": "INDEX - getAllChocolates",
 					"request": {
 						"method": "GET",
-						"header": []
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/chocolate",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"chocolate"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "SHOW - getChocolateById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/chocolate/100",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"chocolate",
+								"100"
+							]
+						}
 					},
 					"response": []
 				}
@@ -37,6 +66,14 @@
 								"estate"
 							]
 						}
+					},
+					"response": []
+				},
+				{
+					"name": "New Request",
+					"request": {
+						"method": "GET",
+						"header": []
 					},
 					"response": []
 				}
