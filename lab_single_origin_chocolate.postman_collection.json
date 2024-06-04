@@ -1,0 +1,46 @@
+{
+	"info": {
+		"_postman_id": "988d57a8-8411-4f78-a873-3f782ee6a654",
+		"name": "lab_single_origin_chocolate",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "33963399"
+	},
+	"item": [
+		{
+			"name": "Chocolate",
+			"item": [
+				{
+					"name": "INDEX - getAllChocolates",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Estate",
+			"item": [
+				{
+					"name": "INDEX - getAllEstates",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/estate",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"estate"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
