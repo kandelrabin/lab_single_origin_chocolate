@@ -20,15 +20,18 @@ public class ChocolateController {
 
 
     @GetMapping
-    public ResponseEntity<List<Chocolate>> getAllChocolates(){
-        List<Chocolate> chocolates = chocolateService.getAllChocolates();
+    public ResponseEntity<List<Chocolate>> getAllChocolates(@RequestParam Optional<Integer> cocoaPercentage){
+        List<Chocolate> chocolates;
 
-        if(chocolates.isEmpty()){
-            return new ResponseEntity<>(null, HttpStatus.NOT_FOUND);
+        if(cocoaPercentage.isPresent()){
+            chocolates = chocolateService.getChocolatesWithCocoaPercentageLessThan(cocoaPercentage.get());
+
         } else {
-            return new ResponseEntity<>(chocolates, HttpStatus.OK);
+            chocolates = chocolateService.getAllChocolates();
         }
+        return new ResponseEntity<>(chocolates,HttpStatus.OK);
     }
+
 
     @GetMapping(value = "/{id}")
     public ResponseEntity<Chocolate> getChocolateById(@PathVariable long id){
@@ -41,16 +44,6 @@ public class ChocolateController {
         }
     }
 
-    @GetMapping(value = "/findby/{percentage}")
-    public ResponseEntity<List<Chocolate>> getChocolatesWithCocoaPercentageLessThan(@PathVariable int percentage){
-        List<Chocolate> chocolates = chocolateService.getChocolatesWithCocoaPercentageLessThan(percentage);
 
-        if (chocolates.isEmpty()){
-            return new ResponseEntity<>(null, HttpStatus.NOT_FOUND);
-        } else {
-            return new ResponseEntity<>(chocolates,HttpStatus.OK);
-        }
-
-    }
 
 }
