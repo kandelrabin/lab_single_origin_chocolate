@@ -33,10 +33,10 @@ public class DataLoader implements ApplicationRunner {
       Estate buenosAries = new Estate("Buenos Aries Estate", "Argentina");
       estateService.addNewEstate(buenosAries);
 
-       chocolateService.addNewChocolate(new Chocolate("bounty",50, london));
-       chocolateService.addNewChocolate(new Chocolate("Mars",50, edinbrugh));
-       chocolateService.addNewChocolate(new Chocolate("cadbury",50, birmingham));
-       chocolateService.addNewChocolate(new Chocolate("Kinder Bueno",50, paris));
+       chocolateService.addNewChocolate(new Chocolate("bounty",10, london));
+       chocolateService.addNewChocolate(new Chocolate("Mars",30, edinbrugh));
+       chocolateService.addNewChocolate(new Chocolate("cadbury",70, birmingham));
+       chocolateService.addNewChocolate(new Chocolate("Kinder Bueno",20, paris));
    }
 
 }

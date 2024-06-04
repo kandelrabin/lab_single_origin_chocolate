@@ -41,5 +41,16 @@ public class ChocolateController {
         }
     }
 
+    @GetMapping(value = "/findby/{percentage}")
+    public ResponseEntity<List<Chocolate>> getChocolatesWithCocoaPercentageLessThan(@PathVariable int percentage){
+        List<Chocolate> chocolates = chocolateService.getChocolatesWithCocoaPercentageLessThan(percentage);
+
+        if (chocolates.isEmpty()){
+            return new ResponseEntity<>(null, HttpStatus.NOT_FOUND);
+        } else {
+            return new ResponseEntity<>(chocolates,HttpStatus.OK);
+        }
+
+    }
 
 }

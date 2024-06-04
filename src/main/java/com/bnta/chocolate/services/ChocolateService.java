@@ -33,7 +33,11 @@ public class ChocolateService {
         return chocolateRepository.findById(id);
     }
 
+//    Get ALL chocolates that are less than a certain value
 
+    public List<Chocolate> getChocolatesWithCocoaPercentageLessThan(int cocoaPercentage){
+        return chocolateRepository.findByCocoaPercentageLessThan(cocoaPercentage);
+    }
 
 
 
