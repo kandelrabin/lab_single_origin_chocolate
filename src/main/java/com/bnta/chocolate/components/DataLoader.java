@@ -2,6 +2,8 @@ package com.bnta.chocolate.components;
 
 import com.bnta.chocolate.models.Chocolate;
 import com.bnta.chocolate.models.Estate;
+import com.bnta.chocolate.repositories.ChocolateRepository;
+import com.bnta.chocolate.repositories.EstateRepository;
 import com.bnta.chocolate.services.ChocolateService;
 import com.bnta.chocolate.services.EstateService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,31 +14,31 @@ import org.springframework.stereotype.Component;
 @Component
 public class DataLoader implements ApplicationRunner {
 
-   @Autowired
-   ChocolateService chocolateService;
+    @Autowired
+    EstateRepository estateRepository;
 
    @Autowired
-   EstateService estateService;
+    ChocolateRepository chocolateRepository;
 
 
    @Override
     public void run (ApplicationArguments args) throws Exception {
 
       Estate london = new Estate("London Estate", "UK");
-      estateService.addNewEstate(london);
+      estateRepository.save(london);
       Estate birmingham = new Estate("Birmingham Estate", "UK");
-      estateService.addNewEstate(birmingham);
+      estateRepository.save(birmingham);
       Estate edinbrugh = new Estate("Edinbrugh Estate", "UK");
-      estateService.addNewEstate(edinbrugh);
+      estateRepository.save(edinbrugh);
       Estate paris = new Estate("Paris Estate", "France");
-      estateService.addNewEstate(paris);
+      estateRepository.save(paris);
       Estate buenosAries = new Estate("Buenos Aries Estate", "Argentina");
-      estateService.addNewEstate(buenosAries);
+      estateRepository.save(buenosAries);
 
-       chocolateService.addNewChocolate(new Chocolate("bounty",10, london));
-       chocolateService.addNewChocolate(new Chocolate("Mars",30, edinbrugh));
-       chocolateService.addNewChocolate(new Chocolate("cadbury",70, birmingham));
-       chocolateService.addNewChocolate(new Chocolate("Kinder Bueno",20, paris));
+       chocolateRepository.save(new Chocolate("bounty",10, london));
+       chocolateRepository.save(new Chocolate("Mars",30, edinbrugh));
+       chocolateRepository.save(new Chocolate("cadbury",70, birmingham));
+       chocolateRepository.save(new Chocolate("Kinder Bueno",20, paris));
    }
 
 }
